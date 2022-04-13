@@ -7,7 +7,19 @@
   "item": [
     {
       "name": "Initial Form Request",
-      "_postman_id": "df6babd1-739e-4ad5-8d94-f6030de2db53",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "cd2d151c-dc2f-491e-81df-94590e88d91e",
+            "exec": [
+              "pm.collectionVariables.get(\"variable_key\");"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "id": "df6babd1-739e-4ad5-8d94-f6030de2db53",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -22,10 +34,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "",
-          "options": {
-            "raw": {}
-          }
+          "raw": ""
         },
         "url": {
           "raw": "https://staging.blockskye.com/api/v1/expense_approval/checkout_form?employer_id=1&employee_id=1",
@@ -57,7 +66,7 @@
     },
     {
       "name": "WBS Code Lookup",
-      "_postman_id": "8fbf1127-4f4c-4464-a891-12fe53558951",
+      "id": "8fbf1127-4f4c-4464-a891-12fe53558951",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -106,7 +115,7 @@
     },
     {
       "name": "Expense Approval",
-      "_postman_id": "e482d438-da91-48ee-aeb6-d35812dcd5b5",
+      "id": "e482d438-da91-48ee-aeb6-d35812dcd5b5",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -134,7 +143,7 @@
     },
     {
       "name": "Expense Approval Copy",
-      "_postman_id": "fa2e018c-cd9f-4c89-9fae-6cbd051d3d00",
+      "id": "fa2e018c-cd9f-4c89-9fae-6cbd051d3d00",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -162,7 +171,7 @@
     },
     {
       "name": "Calendar Integration Status",
-      "_postman_id": "33e2156b-a979-4235-910d-6a023958a009",
+      "id": "33e2156b-a979-4235-910d-6a023958a009",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -177,10 +186,7 @@
         "header": [],
         "body": {
           "mode": "formdata",
-          "formdata": [],
-          "options": {
-            "formdata": {}
-          }
+          "formdata": []
         },
         "url": {
           "raw": "https://staging.blockskye.com/api/v1/calendar-integration/status?employee_id=1&employer_id=1",
@@ -212,7 +218,7 @@
     },
     {
       "name": "Get Expense",
-      "_postman_id": "a41e1c2b-66b7-4884-b776-813f904d1fc7",
+      "id": "a41e1c2b-66b7-4884-b776-813f904d1fc7",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -231,7 +237,7 @@
     },
     {
       "name": "Profile - Get Profile",
-      "_postman_id": "3c5d0904-243e-4ea0-9aef-132abdfc5dfd",
+      "id": "3c5d0904-243e-4ea0-9aef-132abdfc5dfd",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -250,7 +256,7 @@
     },
     {
       "name": "Profile - Post API",
-      "_postman_id": "e0f2c18d-186b-4ba5-a95c-43bf799292d3",
+      "id": "e0f2c18d-186b-4ba5-a95c-43bf799292d3",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -278,7 +284,7 @@
     },
     {
       "name": "[3]: Test - Adding Ticket data",
-      "_postman_id": "2b1038f0-85b9-43d1-b88f-980fcbb6b4fa",
+      "id": "2b1038f0-85b9-43d1-b88f-980fcbb6b4fa",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -306,7 +312,7 @@
     },
     {
       "name": "[3]: Test - Adding Ticket data Copy2",
-      "_postman_id": "56266b11-3168-45a3-a482-9bd8664399fa",
+      "id": "56266b11-3168-45a3-a482-9bd8664399fa",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -334,7 +340,7 @@
     },
     {
       "name": "[3]: Test - Adding Ticket data Copy",
-      "_postman_id": "e877ba5c-b7f0-4392-9579-4ba2a05fa780",
+      "id": "e877ba5c-b7f0-4392-9579-4ba2a05fa780",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -362,7 +368,7 @@
     },
     {
       "name": "[3]: Test - Add Air Ticket",
-      "_postman_id": "006a4bf2-2ffa-43b0-9031-885a1b06cdad",
+      "id": "006a4bf2-2ffa-43b0-9031-885a1b06cdad",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -390,7 +396,7 @@
     },
     {
       "name": "[3]: Test - Adding only Air Ticket",
-      "_postman_id": "a63c1b29-fd65-4ad4-8135-1df201e98217",
+      "id": "a63c1b29-fd65-4ad4-8135-1df201e98217",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -418,7 +424,7 @@
     },
     {
       "name": "[3]: Test - Sale-Void",
-      "_postman_id": "50ac1d23-26f1-42d2-b97d-fea6cd758438",
+      "id": "50ac1d23-26f1-42d2-b97d-fea6cd758438",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -446,7 +452,7 @@
     },
     {
       "name": "[3]: Test - Cancel-void",
-      "_postman_id": "ef2f8aac-3d05-41f9-8323-94729376c500",
+      "id": "ef2f8aac-3d05-41f9-8323-94729376c500",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -474,7 +480,7 @@
     },
     {
       "name": "[3]: Test - Sale-Refund",
-      "_postman_id": "dfd2c134-65e4-49ab-8ed7-fa794e4704e7",
+      "id": "dfd2c134-65e4-49ab-8ed7-fa794e4704e7",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -502,7 +508,7 @@
     },
     {
       "name": "[3]: Test - cancel-Refund",
-      "_postman_id": "c33d790d-2d9d-4cf2-8e06-8c75643db01b",
+      "id": "c33d790d-2d9d-4cf2-8e06-8c75643db01b",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -530,7 +536,7 @@
     },
     {
       "name": "[3]: Test - Ticket-Exchange",
-      "_postman_id": "10d508ea-266d-4bec-af0f-89191243de9a",
+      "id": "10d508ea-266d-4bec-af0f-89191243de9a",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -558,7 +564,7 @@
     },
     {
       "name": "[3]: Test - filtered-void",
-      "_postman_id": "391da385-afbd-4a7c-946d-861f9b75fbd4",
+      "id": "391da385-afbd-4a7c-946d-861f9b75fbd4",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -586,7 +592,7 @@
     },
     {
       "name": "[3]: Test - sale-updated",
-      "_postman_id": "2617afbb-1940-4329-8bdd-f78c166ea1f8",
+      "id": "2617afbb-1940-4329-8bdd-f78c166ea1f8",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -614,7 +620,7 @@
     },
     {
       "name": "[3]: Test - Adding Hotel Booking",
-      "_postman_id": "85bc831c-5a63-4adf-875c-9af762e71289",
+      "id": "85bc831c-5a63-4adf-875c-9af762e71289",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -642,7 +648,7 @@
     },
     {
       "name": "[2]: Test - Add Car Air Booking",
-      "_postman_id": "47e6d81b-670d-4451-8885-caf1f5665e35",
+      "id": "47e6d81b-670d-4451-8885-caf1f5665e35",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -670,7 +676,7 @@
     },
     {
       "name": "[2]: Test - Add Ground",
-      "_postman_id": "198796a4-5c8c-43ad-abf6-bbdca00c16e4",
+      "id": "198796a4-5c8c-43ad-abf6-bbdca00c16e4",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -698,7 +704,7 @@
     },
     {
       "name": "[2]: Test - Add Train Booking",
-      "_postman_id": "760b9cf6-a287-4bfa-81c1-7c0612c905c8",
+      "id": "760b9cf6-a287-4bfa-81c1-7c0612c905c8",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -726,7 +732,7 @@
     },
     {
       "name": "[4]: Test - Cancel Car Booking",
-      "_postman_id": "f4d7e0d1-e972-44fd-aaeb-825c854496f7",
+      "id": "f4d7e0d1-e972-44fd-aaeb-825c854496f7",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -754,7 +760,7 @@
     },
     {
       "name": "[5]: Test - Cancel Air Ticket",
-      "_postman_id": "b9652835-701b-481a-833d-acb38a2d2ac2",
+      "id": "b9652835-701b-481a-833d-acb38a2d2ac2",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -782,7 +788,7 @@
     },
     {
       "name": "[5]: Test - Cancel All Booking",
-      "_postman_id": "0699cfb9-0408-40d5-aa38-fc1adbd57c6b",
+      "id": "0699cfb9-0408-40d5-aa38-fc1adbd57c6b",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -810,7 +816,7 @@
     },
     {
       "name": "Create Luhn Number",
-      "_postman_id": "104da414-10f6-4346-81ca-6eb9f4bb4a26",
+      "id": "104da414-10f6-4346-81ca-6eb9f4bb4a26",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -823,7 +829,7 @@
     },
     {
       "name": "Validate Luhn Number",
-      "_postman_id": "8fa9f4e2-247e-4a04-b699-8e07d2df18cc",
+      "id": "8fa9f4e2-247e-4a04-b699-8e07d2df18cc",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -836,14 +842,13 @@
     },
     {
       "name": "New Request",
-      "_postman_id": "1f2b1b0b-ad77-4219-bc2b-f88d45abc98e",
+      "id": "1f2b1b0b-ad77-4219-bc2b-f88d45abc98e",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
       "request": {
         "method": "GET",
-        "header": [],
-        "url": null
+        "header": []
       },
       "response": []
     }
