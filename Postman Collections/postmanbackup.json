@@ -1,0 +1,851 @@
+{
+  "info": {
+    "_postman_id": "66a5155f-1c4d-435f-a4b5-05152ed76c69",
+    "name": "Ian Usman Copy - Blockskye v1.9 Copy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Initial Form Request",
+      "_postman_id": "df6babd1-739e-4ad5-8d94-f6030de2db53",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {}
+          }
+        },
+        "url": {
+          "raw": "https://staging.blockskye.com/api/v1/expense_approval/checkout_form?employer_id=1&employee_id=1",
+          "protocol": "https",
+          "host": [
+            "staging",
+            "blockskye",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "expense_approval",
+            "checkout_form"
+          ],
+          "query": [
+            {
+              "key": "employer_id",
+              "value": "1"
+            },
+            {
+              "key": "employee_id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "WBS Code Lookup",
+      "_postman_id": "8fbf1127-4f4c-4464-a891-12fe53558951",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://staging.blockskye.com/api/v1/expense_approval/job_codes?employer_id=1&employee_id=1&search_query=Google",
+          "protocol": "https",
+          "host": [
+            "staging",
+            "blockskye",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "expense_approval",
+            "job_codes"
+          ],
+          "query": [
+            {
+              "key": "employer_id",
+              "value": "1"
+            },
+            {
+              "key": "employee_id",
+              "value": "1",
+              "description": "The employee ID, e.g. 1"
+            },
+            {
+              "key": "search_query",
+              "value": "Google",
+              "description": "The search query we'll send to the corporate client as a search criteria"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Expense Approval",
+      "_postman_id": "e482d438-da91-48ee-aeb6-d35812dcd5b5",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"employee_id\": \"00300340746\",\n    \"employer_id\": \"1\",\n    \"total_amount\": 2000,\n    \"form_of_payment\":\"BSK\",\n    \"wbs_codes\": [\n        {\n            \"wbs_element\": \"01628315001\",\n            \"amount\": 1000,\n            \"allocation\": \"50\",\n            \"reason\": \"destroy GoldenEye\",\n            \"expense_type\":\"airfare\",\n            \"tax_status\":\"non-taxable\"\n        },\n        {\n            \"wbs_element\": \"80094605001\",\n            \"amount\": 1000,\n            \"allocation\": \"50\",\n            \"reason\": \"Testing\",\n            \"expense_type\":\"car\",\n            \"tax_status\":\"taxable\"\n        }\n    ]\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/expense_approval/create"
+      },
+      "response": []
+    },
+    {
+      "name": "Expense Approval Copy",
+      "_postman_id": "fa2e018c-cd9f-4c89-9fae-6cbd051d3d00",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"employee_id\": \"00300311590\",\n    \"employer_id\": \"2\",\n    \"total_amount\": 378.96,\n    \"form_of_payment\":\"CC\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/expense_approval/create"
+      },
+      "response": []
+    },
+    {
+      "name": "Calendar Integration Status",
+      "_postman_id": "33e2156b-a979-4235-910d-6a023958a009",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [],
+          "options": {
+            "formdata": {}
+          }
+        },
+        "url": {
+          "raw": "https://staging.blockskye.com/api/v1/calendar-integration/status?employee_id=1&employer_id=1",
+          "protocol": "https",
+          "host": [
+            "staging",
+            "blockskye",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "calendar-integration",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "employee_id",
+              "value": "1"
+            },
+            {
+              "key": "employer_id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Expense",
+      "_postman_id": "a41e1c2b-66b7-4884-b776-813f904d1fc7",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "GET",
+        "header": [],
+        "url": "https://staging.blockskye.com/api/v1/expense/get_expense/017fe61d-1a83-2a90-537e-99dffec5dc52"
+      },
+      "response": []
+    },
+    {
+      "name": "Profile - Get Profile",
+      "_postman_id": "3c5d0904-243e-4ea0-9aef-132abdfc5dfd",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "GET",
+        "header": [],
+        "url": "https://staging.blockskye.com/api/v1/expense/get_expense/017c2d74-3b07-96c8-9105-eda29f88e911"
+      },
+      "response": []
+    },
+    {
+      "name": "Profile - Post API",
+      "_postman_id": "e0f2c18d-186b-4ba5-a95c-43bf799292d3",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"employee_id\": \"00300311590\",\n    \"employer_id\": \"1\",\n    \"expense_type\": \"airfare\",\n    \"total_amount\": \"1000\",\n    \"tax_status\": \"taxable\",\n    \"wbs_codes\": [\n        {\n            \"wbs_element\": \"00000019001\",\n            \"amount\": \"1000\",\n            \"allocation\": \"100\",\n            \"reason\": \"destroy GoldenEye\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/expense_approval/create"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - Adding Ticket data",
+      "_postman_id": "2b1038f0-85b9-43d1-b88f-980fcbb6b4fa",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [{\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"NZ55\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-03-16T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-04-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n    \"hotelSegments\": [{\n        \"confirmationID\":\"NX55\",\n        \"hotelName\":\"Park Lane\",\n        \"checkinDateTimeTZ\":\"2022-03-16T12:10:34+00:00\",\n        \"checkoutDateTimeTZ\":\"2022-04-25T10:10:34+00:00\",\n        \"statusCode\":\"JK\",\n        \"roomDescription\":\"VIP Room with Seaview\",\n        \"phoneNumber\":\"+923345965544\",\n        \"cancellationPolicy\":\"50 percent Refund on cancellation\",\n        \"numberOfGuests\":2,\n        \"locationTimeZone\":\"PKT\",\n        \"address\": {\n                \"city\": \"New York\",\n                \"country\": \"US\",\n                \"postalCode\": \"54000\",\n                \"state\": \"London\",\n                \"street\": \"49\"\n            }\n        \n    }],\n    \"carSegments\": [\n        {\n            \"confirmationID\": \"NC55\",\n            \"dropoffAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"US\",\n                \"postalCode\": \"150\",\n                \"state\": \"Tempa\",\n                \"street\": \"Green\"\n            },\n            \"dropoffDateTimeTZ\": \"2022-04-22T17:18:34+00:00\",\n            \"pickupAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"US\",\n                \"postalCode\": \"200\",\n                \"state\": \"Florida\",\n                \"street\": \"Finish\"\n            },\n            \"pickupDateTimeTZ\": \"2022-03-16T17:18:34+00:00\",\n            \"statusCode\": \"HK\",\n            \"vehicleTypeName\":\"SUV\",\n            \"vendorName\":\"Hyundai\"\n        }\n    ],\n    \"railSegments\": [{\n        \"externalSourceReference\":\"AN121\",\n        \"carriageNumber\":33,\n        \"arrivalStation\": \"30C\",\n        \"departureStation\": \"121B\",\n        \"departureDateTimeTZ\": \"2022-03-16T17:18:34-05:00\",\n        \"arrivalDateTimeTZ\": \"2022-04-25T17:18:34-05:00\",\n        \"payment\":{\n            \"CurrencyCode\":\"USD\",\n            \"comments\":\"hello\",\n            \"fees\":1500,\n            \"taxes\":200,\n            \"total\":1700\n        },\n        \"itemID\":18,\n        \"seatNumber\": \"NM12\",\n        \"statusCode\": \"HK\",\n        \"trainName\": \"JFK\",\n        \"trainNumber\":56,\n        \"vendorCode\": \"2\",\n        \"vendorName\":\"Rawalpindi Express\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\"\n    }, \n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"05-28-2021\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"m@mi6.gov.uk\", \n            \"arrangerEmployeeId\": \"1\", \n            \"arrangerName\": \"M\"\n        }\n    },\n    \"ticket\": {\n            \"Sale\": {\n                \"dateOfIssue\": \"2022-02-22\", \n                \"documentNumber\": \"1234567890\", \n                \"prices\": {\n                    \"ticketDocumentAmount\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }\n            }, \n            \"ticketDocumentInfo\": {\n                \"primaryDocumentNumber\": \"ASDF1234\"\n            }, \n            \"coupons\": {\n                \"value\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }, \n                \"ticketingDateOfIssue\": \"2021-05-29\", \n                \"soldFlightNumber\": \"1234\", \n                \"soldOriginCityCode\": \"JFK\", \n                \"soldReservationStatusCode\": \"HK\", \n                \"soldAirlineDesignator\": \"UA\", \n                \"soldDestinationCityCode\": \"LHR\", \n                \"soldFlightDepartureDateTime\": \"2022-02-11T02:00:00Z\", \n                \"couponNumber\": 4, \n                \"classOfService\": \"First\"\n            }, \n            \"passenger\": {\n                \"customerIdentification\": \"007\", \n                \"firstName\": \"James\", \n                \"lastName\": \"Bond\", \n                \"dateOfBirth\": \"1988-03-10\", \n                \"frequentFlyers\": {\n                    \"airlineCarrierCode\": \"UA\", \n                    \"referenceNumber\": \"1234ASDF\"\n                }\n            }\n        }\n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017f4ee2-20f5-7b96-f90d-6dd85ec84283"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - Adding Ticket data Copy2",
+      "_postman_id": "56266b11-3168-45a3-a482-9bd8664399fa",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [{\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"NZ55\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-03-16T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-04-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n    \"hotelSegments\": [{\n        \"confirmationID\":\"NX55\",\n        \"hotelName\":\"Park Lane\",\n        \"checkinDateTimeTZ\":\"2022-03-16T12:10:34+00:00\",\n        \"checkoutDateTimeTZ\":\"2022-04-25T10:10:34+00:00\",\n        \"statusCode\":\"JK\",\n        \"roomDescription\":\"VIP Room with Seaview\",\n        \"phoneNumber\":\"+923345965544\",\n        \"cancellationPolicy\":\"50 percent Refund on cancellation\",\n        \"numberOfGuests\":2,\n        \"locationTimeZone\":\"PKT\",\n        \"address\": {\n                \"city\": \"New York\",\n                \"country\": \"US\",\n                \"postalCode\": \"54000\",\n                \"state\": \"London\",\n                \"street\": \"49\"\n            }\n        \n    }],\n    \"carSegments\": [\n        {\n            \"confirmationID\": \"NC55\",\n            \"dropoffAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"US\",\n                \"postalCode\": \"150\",\n                \"state\": \"Tempa\",\n                \"street\": \"Green\"\n            },\n            \"dropoffDateTimeTZ\": \"2022-04-22T17:18:34+00:00\",\n            \"pickupAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"US\",\n                \"postalCode\": \"200\",\n                \"state\": \"Florida\",\n                \"street\": \"Finish\"\n            },\n            \"pickupDateTimeTZ\": \"2022-03-16T17:18:34+00:00\",\n            \"statusCode\": \"HK\",\n            \"vehicleTypeName\":\"SUV\",\n            \"vendorName\":\"Hyundai\"\n        }\n    ],\n    \"railSegments\": [{\n        \"externalSourceReference\":\"AN121\",\n        \"carriageNumber\":33,\n        \"arrivalStation\": \"30C\",\n        \"departureStation\": \"121B\",\n        \"departureDateTimeTZ\": \"2022-03-16T17:18:34-05:00\",\n        \"arrivalDateTimeTZ\": \"2022-04-25T17:18:34-05:00\",\n        \"payment\":{\n            \"CurrencyCode\":\"USD\",\n            \"comments\":\"hello\",\n            \"fees\":1500,\n            \"taxes\":200,\n            \"total\":1700\n        },\n        \"itemID\":18,\n        \"seatNumber\": \"NM12\",\n        \"statusCode\": \"HK\",\n        \"trainName\": \"JFK\",\n        \"trainNumber\":56,\n        \"vendorCode\": \"2\",\n        \"vendorName\":\"Rawalpindi Express\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\"\n    }, \n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"05-28-2021\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"m@mi6.gov.uk\", \n            \"arrangerEmployeeId\": \"1\", \n            \"arrangerName\": \"M\"\n        }\n    },\n    \"ticket\": {\n            \"Sale\": {\n                \"dateOfIssue\": \"2022-02-22\", \n                \"documentNumber\": \"1234567890\", \n                \"prices\": {\n                    \"ticketDocumentAmount\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }\n            }, \n            \"ticketDocumentInfo\": {\n                \"primaryDocumentNumber\": \"ASDF1234\"\n            }, \n            \"coupons\": {\n                \"value\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }, \n                \"ticketingDateOfIssue\": \"2021-05-29\", \n                \"soldFlightNumber\": \"1234\", \n                \"soldOriginCityCode\": \"JFK\", \n                \"soldReservationStatusCode\": \"HK\", \n                \"soldAirlineDesignator\": \"UA\", \n                \"soldDestinationCityCode\": \"LHR\", \n                \"soldFlightDepartureDateTime\": \"2022-02-11T02:00:00Z\", \n                \"couponNumber\": 4, \n                \"classOfService\": \"First\"\n            }, \n            \"passenger\": {\n                \"customerIdentification\": \"007\", \n                \"firstName\": \"James\", \n                \"lastName\": \"Bond\", \n                \"dateOfBirth\": \"1988-03-10\", \n                \"frequentFlyers\": {\n                    \"airlineCarrierCode\": \"UA\", \n                    \"referenceNumber\": \"1234ASDF\"\n                }\n            }\n        }\n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017f4ee2-20f5-7b96-f90d-6dd85ec84283"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - Adding Ticket data Copy",
+      "_postman_id": "e877ba5c-b7f0-4392-9579-4ba2a05fa780",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [{\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"NZ55\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-03-16T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-04-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n    \"hotelSegments\": [{\n        \"confirmationID\":\"NX55\",\n        \"hotelName\":\"Park Lane\",\n        \"checkinDateTimeTZ\":\"2022-03-16T12:10:34+00:00\",\n        \"checkoutDateTimeTZ\":\"2022-04-25T10:10:34+00:00\",\n        \"statusCode\":\"JK\",\n        \"roomDescription\":\"VIP Room with Seaview\",\n        \"phoneNumber\":\"+923345965544\",\n        \"cancellationPolicy\":\"50 percent Refund on cancellation\",\n        \"numberOfGuests\":2,\n        \"locationTimeZone\":\"PKT\",\n        \"address\": {\n                \"city\": \"New York\",\n                \"country\": \"US\",\n                \"postalCode\": \"54000\",\n                \"state\": \"London\",\n                \"street\": \"49\"\n            }\n        \n    }],\n    \"carSegments\": [\n        {\n            \"confirmationID\": \"NC55\",\n            \"dropoffAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"US\",\n                \"postalCode\": \"150\",\n                \"state\": \"Tempa\",\n                \"street\": \"Green\"\n            },\n            \"dropoffDateTimeTZ\": \"2022-04-22T17:18:34+00:00\",\n            \"pickupAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"US\",\n                \"postalCode\": \"200\",\n                \"state\": \"Florida\",\n                \"street\": \"Finish\"\n            },\n            \"pickupDateTimeTZ\": \"2022-03-16T17:18:34+00:00\",\n            \"statusCode\": \"HK\",\n            \"vehicleTypeName\":\"SUV\",\n            \"vendorName\":\"Hyundai\"\n        }\n    ],\n    \"railSegments\": [{\n        \"externalSourceReference\":\"AN121\",\n        \"carriageNumber\":33,\n        \"arrivalStation\": \"30C\",\n        \"departureStation\": \"121B\",\n        \"departureDateTimeTZ\": \"2022-03-16T17:18:34-05:00\",\n        \"arrivalDateTimeTZ\": \"2022-04-25T17:18:34-05:00\",\n        \"payment\":{\n            \"CurrencyCode\":\"USD\",\n            \"comments\":\"hello\",\n            \"fees\":1500,\n            \"taxes\":200,\n            \"total\":1700\n        },\n        \"itemID\":18,\n        \"seatNumber\": \"NM12\",\n        \"statusCode\": \"HK\",\n        \"trainName\": \"JFK\",\n        \"trainNumber\":56,\n        \"vendorCode\": \"2\",\n        \"vendorName\":\"Rawalpindi Express\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\"\n    }, \n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"05-28-2021\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"m@mi6.gov.uk\", \n            \"arrangerEmployeeId\": \"1\", \n            \"arrangerName\": \"M\"\n        }\n    },\n    \"ticket\": {\n            \"Sale\": {\n                \"dateOfIssue\": \"2022-02-22\", \n                \"documentNumber\": \"1234567890\", \n                \"prices\": {\n                    \"ticketDocumentAmount\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }\n            }, \n            \"ticketDocumentInfo\": {\n                \"primaryDocumentNumber\": \"ASDF1234\"\n            }, \n            \"coupons\": {\n                \"value\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }, \n                \"ticketingDateOfIssue\": \"2021-05-29\", \n                \"soldFlightNumber\": \"1234\", \n                \"soldOriginCityCode\": \"JFK\", \n                \"soldReservationStatusCode\": \"HK\", \n                \"soldAirlineDesignator\": \"UA\", \n                \"soldDestinationCityCode\": \"LHR\", \n                \"soldFlightDepartureDateTime\": \"2022-02-11T02:00:00Z\", \n                \"couponNumber\": 4, \n                \"classOfService\": \"First\"\n            }, \n            \"passenger\": {\n                \"customerIdentification\": \"007\", \n                \"firstName\": \"James\", \n                \"lastName\": \"Bond\", \n                \"dateOfBirth\": \"1988-03-10\", \n                \"frequentFlyers\": {\n                    \"airlineCarrierCode\": \"UA\", \n                    \"referenceNumber\": \"1234ASDF\"\n                }\n            }\n        }\n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017f4ee2-20f5-7b96-f90d-6dd85ec84283"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - Add Air Ticket",
+      "_postman_id": "006a4bf2-2ffa-43b0-9031-885a1b06cdad",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [{\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"NIKE11\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-03-30T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-05-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\",\n        \"email\":\"usman.chughtai@arbisoft.com\",\n        \"phoneNumber\":\"+144566543455\",\n        \"employeeID\": \"01628315001\",\n        \"employer\":\"PwC\"\n    }, \n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"05-28-2021\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"usman.chughtai@blockskye.com\", \n            \"arrangerEmployeeId\": \"00300340746\", \n            \"arrangerName\": \"Mr. Arranger\"\n        }\n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017fe051-dfbd-449b-fa7f-d531cb503882"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - Adding only Air Ticket",
+      "_postman_id": "a63c1b29-fd65-4ad4-8135-1df201e98217",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [{\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"ZXX55\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-02-21T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-04-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n        \"itemID\":18,\n        \"seatNumber\": \"12\",\n        \"statusCode\": \"HK\",\n        \"trainName\": \"JFK\",\n        \"trainNumber\":56,\n        \"vendorCode\": \"2\",\n        \"vendorName\":\"Rawalpindi Express\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\"\n    }, \n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"05-28-2021\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"m@mi6.gov.uk\", \n            \"arrangerEmployeeId\": \"1\", \n            \"arrangerName\": \"M\"\n        }\n    },\n    \"ticket\": {\n            \"Sale\": {\n                \"dateOfIssue\": \"2022-02-22\", \n                \"documentNumber\": \"1234567890\", \n                \"prices\": {\n                    \"ticketDocumentAmount\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }\n            }, \n            \"ticketDocumentInfo\": {\n                \"primaryDocumentNumber\": \"ASDF1234\"\n            }, \n            \"coupons\": {\n                \"value\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }, \n                \"ticketingDateOfIssue\": \"2021-05-29\", \n                \"soldFlightNumber\": \"1234\", \n                \"soldOriginCityCode\": \"JFK\", \n                \"soldReservationStatusCode\": \"HK\", \n                \"soldAirlineDesignator\": \"UA\", \n                \"soldDestinationCityCode\": \"LHR\", \n                \"soldFlightDepartureDateTime\": \"2022-02-11T02:00:00Z\", \n                \"couponNumber\": 4, \n                \"classOfService\": \"First\"\n            }, \n            \"passenger\": {\n                \"customerIdentification\": \"007\", \n                \"firstName\": \"James\", \n                \"lastName\": \"Bond\", \n                \"dateOfBirth\": \"1988-03-10\", \n                \"frequentFlyers\": {\n                    \"airlineCarrierCode\": \"UA\", \n                    \"referenceNumber\": \"1234ASDF\"\n                }\n            }\n        }\n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017f205d-9b50-66b7-916b-9cf735215afa"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - Sale-Void",
+      "_postman_id": "50ac1d23-26f1-42d2-b97d-fea6cd758438",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [\n        {\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"NTK98\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-03-25T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-04-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\"\n    },\n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"03-25-2022\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"m@mi6.gov.uk\", \n            \"arrangerEmployeeId\": \"1\", \n            \"arrangerName\": \"M\"\n        }\n    },\n    \"ticket\": {\n            \"Refund\":{\n                  \"agencyCode\":\"10779613\",\n                  \"airlineCarrierCode\":\"016\",\n                  \"dateOfIssue\":\"2022-03-25\",\n                  \"documentNumber\":\"2359997598\",\n                  \"fees\": {\n                    \"code\":\"37C\",\n                    \"subCode\":\"87\",\n                    \"value\": {\n                      \"amount\":700,\n                      \"currency\":\"USD\",\n                      \"precision\":100,\n                    }\n                  },\n                  \n                  \"refundInfo\": {\n                    \"refundedAmount\": {\n                      \"amount\":650,\n                      \"currency\":\"USD\",\n                      \"precision\":100\n                    }\n                  },\n                  \n                  \"taxes\": {\n                    \"code\":\"54F\",\n                    \"subCode\":\"56\",\n                    \"value\": {\n                      \"amount\":100,\n                      \"currency\":\"USD\",\n                      \"precision\":10\n                    }\n                  }\n\n            },\n            \"Sale\":[{\n                \"dateOfIssue\": \"2022-03-25\", \n                \"documentNumber\": \"1234567890\", \n                \"prices\": {\n                    \"ticketDocumentAmount\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                    }\n                }, \n                \"ticketDocumentInfo\": {\n                    \"primaryDocumentNumber\": \"ASDF1234\"\n                }, \n                \"coupons\": {\n                    \"value\": {\n                        \"amount\": 1000, \n                        \"currency\": \"USD\", \n                        \"precision\": 4\n                    }, \n                    \"ticketingDateOfIssue\": \"2022-03-25\", \n                    \"soldFlightNumber\": \"1234\", \n                    \"soldOriginCityCode\": \"JFK\", \n                    \"soldReservationStatusCode\": \"HK\", \n                    \"soldAirlineDesignator\": \"UA\", \n                    \"soldDestinationCityCode\": \"LHR\", \n                    \"soldFlightDepartureDateTime\": \"2022-03-25T02:00:00Z\", \n                    \"couponNumber\": 4, \n                    \"classOfService\": \"First\"\n                }, \n                \"passenger\": {\n                    \"customerIdentification\": \"007\", \n                    \"firstName\": \"James\", \n                    \"lastName\": \"Bond\", \n                    \"dateOfBirth\": \"1988-03-10\", \n                    \"frequentFlyers\": {\n                        \"airlineCarrierCode\": \"UA\", \n                        \"referenceNumber\": \"1234ASDF\"\n                    }\n                }\n        }]\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017fb24e-aba1-68ef-8da1-8df6d8a5fe5d"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - Cancel-void",
+      "_postman_id": "ef2f8aac-3d05-41f9-8323-94729376c500",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [\n        {\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"NTK98\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-03-25T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-04-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\"\n    },\n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"03-25-2022\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"m@mi6.gov.uk\", \n            \"arrangerEmployeeId\": \"1\", \n            \"arrangerName\": \"M\"\n        }\n    },\n    \"ticket\": {\n            \"Refund\":{\n                  \"agencyCode\":\"10779613\",\n                  \"airlineCarrierCode\":\"016\",\n                  \"dateOfIssue\":\"2022-03-25\",\n                  \"documentNumber\":\"2359997598\",\n                  \"fees\": {\n                    \"code\":\"37C\",\n                    \"subCode\":\"87\",\n                    \"value\": {\n                      \"amount\":700,\n                      \"currency\":\"USD\",\n                      \"precision\":100,\n                    }\n                  },\n                  \n                  \"refundInfo\": {\n                    \"refundedAmount\": {\n                      \"amount\":650,\n                      \"currency\":\"USD\",\n                      \"precision\":100\n                    }\n                  },\n                  \n                  \"taxes\": {\n                    \"code\":\"54F\",\n                    \"subCode\":\"56\",\n                    \"value\": {\n                      \"amount\":100,\n                      \"currency\":\"USD\",\n                      \"precision\":10\n                    }\n                  }\n\n            },\n            \"Sale\":[{\n                \"dateOfIssue\": \"2022-03-25\", \n                \"documentNumber\": \"1234567890\", \n                \"prices\": {\n                    \"ticketDocumentAmount\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                    }\n                }, \n                \"ticketDocumentInfo\": {\n                    \"primaryDocumentNumber\": \"ASDF1234\"\n                }, \n                \"coupons\": {\n                    \"value\": {\n                        \"amount\": 1000, \n                        \"currency\": \"USD\", \n                        \"precision\": 4\n                    }, \n                    \"ticketingDateOfIssue\": \"2022-03-25\", \n                    \"soldFlightNumber\": \"1234\", \n                    \"soldOriginCityCode\": \"JFK\", \n                    \"soldReservationStatusCode\": \"HK\", \n                    \"soldAirlineDesignator\": \"UA\", \n                    \"soldDestinationCityCode\": \"LHR\", \n                    \"soldFlightDepartureDateTime\": \"2022-03-25T02:00:00Z\", \n                    \"couponNumber\": 4, \n                    \"classOfService\": \"First\"\n                }, \n                \"passenger\": {\n                    \"customerIdentification\": \"007\", \n                    \"firstName\": \"James\", \n                    \"lastName\": \"Bond\", \n                    \"dateOfBirth\": \"1988-03-10\", \n                    \"frequentFlyers\": {\n                        \"airlineCarrierCode\": \"UA\", \n                        \"referenceNumber\": \"1234ASDF\"\n                    }\n                }\n        }]\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017fb24e-aba1-68ef-8da1-8df6d8a5fe5d"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - Sale-Refund",
+      "_postman_id": "dfd2c134-65e4-49ab-8ed7-fa794e4704e7",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [\n        {\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"NTK98\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-03-25T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-04-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\"\n    },\n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"03-25-2022\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"m@mi6.gov.uk\", \n            \"arrangerEmployeeId\": \"1\", \n            \"arrangerName\": \"M\"\n        }\n    },\n    \"ticket\": {\n            \"Refund\":{\n                  \"agencyCode\":\"10779613\",\n                  \"airlineCarrierCode\":\"016\",\n                  \"dateOfIssue\":\"2022-03-25\",\n                  \"documentNumber\":\"2359997598\",\n                  \"fees\": {\n                    \"code\":\"37C\",\n                    \"subCode\":\"87\",\n                    \"value\": {\n                      \"amount\":700,\n                      \"currency\":\"USD\",\n                      \"precision\":100,\n                    }\n                  },\n                  \n                  \"refundInfo\": {\n                    \"refundedAmount\": {\n                      \"amount\":650,\n                      \"currency\":\"USD\",\n                      \"precision\":100\n                    }\n                  },\n                  \n                  \"taxes\": {\n                    \"code\":\"54F\",\n                    \"subCode\":\"56\",\n                    \"value\": {\n                      \"amount\":100,\n                      \"currency\":\"USD\",\n                      \"precision\":10\n                    }\n                  }\n\n            },\n            \"Sale\":[{\n                \"dateOfIssue\": \"2022-03-25\", \n                \"documentNumber\": \"1234567890\", \n                \"prices\": {\n                    \"ticketDocumentAmount\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                    }\n                }, \n                \"ticketDocumentInfo\": {\n                    \"primaryDocumentNumber\": \"ASDF1234\"\n                }, \n                \"coupons\": {\n                    \"value\": {\n                        \"amount\": 1000, \n                        \"currency\": \"USD\", \n                        \"precision\": 4\n                    }, \n                    \"ticketingDateOfIssue\": \"2022-03-25\", \n                    \"soldFlightNumber\": \"1234\", \n                    \"soldOriginCityCode\": \"JFK\", \n                    \"soldReservationStatusCode\": \"HK\", \n                    \"soldAirlineDesignator\": \"UA\", \n                    \"soldDestinationCityCode\": \"LHR\", \n                    \"soldFlightDepartureDateTime\": \"2022-03-25T02:00:00Z\", \n                    \"couponNumber\": 4, \n                    \"classOfService\": \"First\"\n                }, \n                \"passenger\": {\n                    \"customerIdentification\": \"007\", \n                    \"firstName\": \"James\", \n                    \"lastName\": \"Bond\", \n                    \"dateOfBirth\": \"1988-03-10\", \n                    \"frequentFlyers\": {\n                        \"airlineCarrierCode\": \"UA\", \n                        \"referenceNumber\": \"1234ASDF\"\n                    }\n                }\n        }]\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017fb24e-aba1-68ef-8da1-8df6d8a5fe5d"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - cancel-Refund",
+      "_postman_id": "c33d790d-2d9d-4cf2-8e06-8c75643db01b",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [\n        {\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"NTK98\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-03-25T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-04-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\"\n    },\n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"03-25-2022\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"m@mi6.gov.uk\", \n            \"arrangerEmployeeId\": \"1\", \n            \"arrangerName\": \"M\"\n        }\n    },\n    \"ticket\": {\n            \"Refund\":{\n                  \"agencyCode\":\"10779613\",\n                  \"airlineCarrierCode\":\"016\",\n                  \"dateOfIssue\":\"2022-03-25\",\n                  \"documentNumber\":\"2359997598\",\n                  \"fees\": {\n                    \"code\":\"37C\",\n                    \"subCode\":\"87\",\n                    \"value\": {\n                      \"amount\":700,\n                      \"currency\":\"USD\",\n                      \"precision\":100,\n                    }\n                  },\n                  \n                  \"refundInfo\": {\n                    \"refundedAmount\": {\n                      \"amount\":650,\n                      \"currency\":\"USD\",\n                      \"precision\":100\n                    }\n                  },\n                  \n                  \"taxes\": {\n                    \"code\":\"54F\",\n                    \"subCode\":\"56\",\n                    \"value\": {\n                      \"amount\":100,\n                      \"currency\":\"USD\",\n                      \"precision\":10\n                    }\n                  }\n\n            },\n            \"Sale\":[{\n                \"dateOfIssue\": \"2022-03-25\", \n                \"documentNumber\": \"1234567890\", \n                \"prices\": {\n                    \"ticketDocumentAmount\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                    }\n                }, \n                \"ticketDocumentInfo\": {\n                    \"primaryDocumentNumber\": \"ASDF1234\"\n                }, \n                \"coupons\": {\n                    \"value\": {\n                        \"amount\": 1000, \n                        \"currency\": \"USD\", \n                        \"precision\": 4\n                    }, \n                    \"ticketingDateOfIssue\": \"2022-03-25\", \n                    \"soldFlightNumber\": \"1234\", \n                    \"soldOriginCityCode\": \"JFK\", \n                    \"soldReservationStatusCode\": \"HK\", \n                    \"soldAirlineDesignator\": \"UA\", \n                    \"soldDestinationCityCode\": \"LHR\", \n                    \"soldFlightDepartureDateTime\": \"2022-03-25T02:00:00Z\", \n                    \"couponNumber\": 4, \n                    \"classOfService\": \"First\"\n                }, \n                \"passenger\": {\n                    \"customerIdentification\": \"007\", \n                    \"firstName\": \"James\", \n                    \"lastName\": \"Bond\", \n                    \"dateOfBirth\": \"1988-03-10\", \n                    \"frequentFlyers\": {\n                        \"airlineCarrierCode\": \"UA\", \n                        \"referenceNumber\": \"1234ASDF\"\n                    }\n                }\n        }]\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017fb24e-aba1-68ef-8da1-8df6d8a5fe5d"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - Ticket-Exchange",
+      "_postman_id": "10d508ea-266d-4bec-af0f-89191243de9a",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [\n        {\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"NTK98\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-03-25T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-04-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\"\n    },\n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"03-25-2022\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"m@mi6.gov.uk\", \n            \"arrangerEmployeeId\": \"1\", \n            \"arrangerName\": \"M\"\n        }\n    },\n    \"ticket\": {\n            \"Refund\":{\n                  \"agencyCode\":\"10779613\",\n                  \"airlineCarrierCode\":\"016\",\n                  \"dateOfIssue\":\"2022-03-25\",\n                  \"documentNumber\":\"2359997598\",\n                  \"fees\": {\n                    \"code\":\"37C\",\n                    \"subCode\":\"87\",\n                    \"value\": {\n                      \"amount\":700,\n                      \"currency\":\"USD\",\n                      \"precision\":100,\n                    }\n                  },\n                  \n                  \"refundInfo\": {\n                    \"refundedAmount\": {\n                      \"amount\":650,\n                      \"currency\":\"USD\",\n                      \"precision\":100\n                    }\n                  },\n                  \n                  \"taxes\": {\n                    \"code\":\"54F\",\n                    \"subCode\":\"56\",\n                    \"value\": {\n                      \"amount\":100,\n                      \"currency\":\"USD\",\n                      \"precision\":10\n                    }\n                  }\n\n            },\n            \"Sale\":[{\n                \"dateOfIssue\": \"2022-03-25\", \n                \"documentNumber\": \"1234567890\", \n                \"prices\": {\n                    \"ticketDocumentAmount\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                    }\n                }, \n                \"ticketDocumentInfo\": {\n                    \"primaryDocumentNumber\": \"ASDF1234\"\n                }, \n                \"coupons\": {\n                    \"value\": {\n                        \"amount\": 1000, \n                        \"currency\": \"USD\", \n                        \"precision\": 4\n                    }, \n                    \"ticketingDateOfIssue\": \"2022-03-25\", \n                    \"soldFlightNumber\": \"1234\", \n                    \"soldOriginCityCode\": \"JFK\", \n                    \"soldReservationStatusCode\": \"HK\", \n                    \"soldAirlineDesignator\": \"UA\", \n                    \"soldDestinationCityCode\": \"LHR\", \n                    \"soldFlightDepartureDateTime\": \"2022-03-25T02:00:00Z\", \n                    \"couponNumber\": 4, \n                    \"classOfService\": \"First\"\n                }, \n                \"passenger\": {\n                    \"customerIdentification\": \"007\", \n                    \"firstName\": \"James\", \n                    \"lastName\": \"Bond\", \n                    \"dateOfBirth\": \"1988-03-10\", \n                    \"frequentFlyers\": {\n                        \"airlineCarrierCode\": \"UA\", \n                        \"referenceNumber\": \"1234ASDF\"\n                    }\n                }\n        }]\n    }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017fb24e-aba1-68ef-8da1-8df6d8a5fe5d"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - filtered-void",
+      "_postman_id": "391da385-afbd-4a7c-946d-861f9b75fbd4",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [{\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"ZXX55\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-02-21T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-04-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n        \"itemID\":18,\n        \"seatNumber\": \"12\",\n        \"statusCode\": \"HK\",\n        \"trainName\": \"JFK\",\n        \"trainNumber\":56,\n        \"vendorCode\": \"2\",\n        \"vendorName\":\"Rawalpindi Express\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\"\n    }, \n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"05-28-2021\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"m@mi6.gov.uk\", \n            \"arrangerEmployeeId\": \"1\", \n            \"arrangerName\": \"M\"\n        }\n    },\n    \"ticket\": {\n            \"Sale\": {\n                \"dateOfIssue\": \"2022-02-22\", \n                \"documentNumber\": \"1234567890\", \n                \"prices\": {\n                    \"ticketDocumentAmount\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }\n            }, \n            \"ticketDocumentInfo\": {\n                \"primaryDocumentNumber\": \"ASDF1234\"\n            }, \n            \"coupons\": {\n                \"value\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }, \n                \"ticketingDateOfIssue\": \"2021-05-29\", \n                \"soldFlightNumber\": \"1234\", \n                \"soldOriginCityCode\": \"JFK\", \n                \"soldReservationStatusCode\": \"HK\", \n                \"soldAirlineDesignator\": \"UA\", \n                \"soldDestinationCityCode\": \"LHR\", \n                \"soldFlightDepartureDateTime\": \"2022-02-11T02:00:00Z\", \n                \"couponNumber\": 4, \n                \"classOfService\": \"First\"\n            }, \n            \"passenger\": {\n                \"customerIdentification\": \"007\", \n                \"firstName\": \"James\", \n                \"lastName\": \"Bond\", \n                \"dateOfBirth\": \"1988-03-10\", \n                \"frequentFlyers\": {\n                    \"airlineCarrierCode\": \"UA\", \n                    \"referenceNumber\": \"1234ASDF\"\n                }\n            }\n        }\n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017f205d-9b50-66b7-916b-9cf735215afa"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - sale-updated",
+      "_postman_id": "2617afbb-1940-4329-8bdd-f78c166ea1f8",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [{\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"ZXX55\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-02-21T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-04-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n        \"itemID\":18,\n        \"seatNumber\": \"12\",\n        \"statusCode\": \"HK\",\n        \"trainName\": \"JFK\",\n        \"trainNumber\":56,\n        \"vendorCode\": \"2\",\n        \"vendorName\":\"Rawalpindi Express\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\"\n    }, \n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"05-28-2021\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"m@mi6.gov.uk\", \n            \"arrangerEmployeeId\": \"1\", \n            \"arrangerName\": \"M\"\n        }\n    },\n    \"ticket\": {\n            \"Sale\": {\n                \"dateOfIssue\": \"2022-02-22\", \n                \"documentNumber\": \"1234567890\", \n                \"prices\": {\n                    \"ticketDocumentAmount\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }\n            }, \n            \"ticketDocumentInfo\": {\n                \"primaryDocumentNumber\": \"ASDF1234\"\n            }, \n            \"coupons\": {\n                \"value\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }, \n                \"ticketingDateOfIssue\": \"2021-05-29\", \n                \"soldFlightNumber\": \"1234\", \n                \"soldOriginCityCode\": \"JFK\", \n                \"soldReservationStatusCode\": \"HK\", \n                \"soldAirlineDesignator\": \"UA\", \n                \"soldDestinationCityCode\": \"LHR\", \n                \"soldFlightDepartureDateTime\": \"2022-02-11T02:00:00Z\", \n                \"couponNumber\": 4, \n                \"classOfService\": \"First\"\n            }, \n            \"passenger\": {\n                \"customerIdentification\": \"007\", \n                \"firstName\": \"James\", \n                \"lastName\": \"Bond\", \n                \"dateOfBirth\": \"1988-03-10\", \n                \"frequentFlyers\": {\n                    \"airlineCarrierCode\": \"UA\", \n                    \"referenceNumber\": \"1234ASDF\"\n                }\n            }\n        }\n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017f205d-9b50-66b7-916b-9cf735215afa"
+      },
+      "response": []
+    },
+    {
+      "name": "[3]: Test - Adding Hotel Booking",
+      "_postman_id": "85bc831c-5a63-4adf-875c-9af762e71289",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "1|JwjHRaWmNLKo6G8PVWo63JaiDasTo4tuYjn70U20"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [{\n        \"aircraftTypeCode\": \"37C\", \n        \"airlineReference\": \"ZXC55\", \n        \"bookingClass\": \"F\", \n        \"carrier\": \"UA\", \n        \"departureDateTimeTZ\": \"2022-02-21T17:18:34-05:00\",\n        \"destination\": \"LHR\", \n        \"flightNumber\": 1234, \n        \"itemID\": 1234567890, \n        \"operatingCarrier\": \"UA\", \n        \"operatingFlightNumber\": 1234, \n        \"origin\": \"JFK\", \n        \"segmentStatus\": \"HK\", \n        \"arrivalDateTimeTZ\": \"2022-04-22T17:18:34+00:00\", \n        \"arrivalGate\": \"5\", \n        \"departureGate\": \"2\"\n    }],\n    \"hotelSegments\": [{\n        \"confirmationID\":\"ZXC55\",\n        \"hotelName\":\"Park Lane\",\n        \"checkinDateTimeTZ\":\"2022-04-23T12:10:34+00:00\",\n        \"checkoutDateTimeTZ\":\"2022-02-25T10:10:34+00:00\",\n        \"statusCode\":\"JK\",\n        \"roomDescription\":\"VIP Room with Seaview\",\n        \"numberOfGuests\":2,\n        \"locationTimeZone\":\"PKT\",\n        \"address\": {\n                \"city\": \"New York\",\n                \"country\": \"US\",\n                \"postalCode\": \"54000\",\n                \"state\": \"London\",\n                \"street\": \"49\"\n            }\n        \n    }],\n    \"carSegments\": [\n        {\n            \"confirmationID\": \"ZXC55\",\n            \"dropoffAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"US\",\n                \"postalCode\": null,\n                \"state\": null,\n                \"street\": null\n            },\n            \"dropoffDateTimeTZ\": \"2022-04-22T17:18:34+00:00\",\n            \"pickupAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"US\",\n                \"postalCode\": null,\n                \"state\": null,\n                \"street\": null\n            },\n            \"pickupDateTimeTZ\": \"2022-02-22T17:18:34+00:00\",\n            \"statusCode\": \"HK\"\n        }\n    ],\n    \"railSegments\": [{\n        \"externalSourceReference\":\"AN121\",\n        \"carriageNumber\":33,\n        \"arrivalStation\": \"30C\",\n        \"departureStation\": \"121B\",\n        \"departureDateTimeTZ\": \"2022-02-23T17:18:34-05:00\",\n        \"arrivalDateTimeTZ\": \"2022-02-25T17:18:34-05:00\",\n        \"payment\":{\n            \"CurrencyCode\":\"USD\",\n            \"comments\":\"hello\",\n            \"fees\":1500,\n            \"taxes\":200,\n            \"total\":1700\n        },\n        \"itemID\":18,\n        \"seatNumber\": \"12\",\n        \"statusCode\": \"HK\",\n        \"trainName\": \"JFK\",\n        \"trainNumber\":56,\n        \"vendorCode\": \"2\",\n        \"vendorName\":\"Rawalpindi Express\"\n    }],\n    \"travellers\": {\n        \"firstName\": \"James\", \n        \"lastName\": \"Bond\", \n        \"itemID\": 1, \n        \"passengerType\": \"government\", \n        \"title\": \"Mr\"\n    }, \n    \"serviceRequests\": {\n        \"itemID\": 1, \n        \"passengerID\": 1, \n        \"requestCode\": \"0007\", \n        \"requestText\": \"bacon, black coffee, chilled orange juice, toast, marmalade and scrambled eggs\", \n        \"segmentID\": 1, \n        \"statusCode\": \"HK\"\n    }, \n    \"tripID\": \"ASDF1234\", \n    \"remarks\": {\n        \"remarkCode\": \"01\", \n        \"remarkText\": \"top secret\"\n    }, \n    \"sourceInfo\": {\n        \"agencyID\": \"KAYAK1\", \n        \"bookingOffice\": \"KAYAK\", \n        \"creationDate\": \"05-28-2021\", \n        \"sourceSystem\": \"KAYAK\", \n        \"sourceReference\": \"1234ASDF\", \n        \"arranger\": {\n            \"arrangerEmail\": \"m@mi6.gov.uk\", \n            \"arrangerEmployeeId\": \"1\", \n            \"arrangerName\": \"M\"\n        }\n    },\n    \"ticket\": {\n            \"Sale\": {\n                \"dateOfIssue\": \"2022-02-22\", \n                \"documentNumber\": \"1234567890\", \n                \"prices\": {\n                    \"ticketDocumentAmount\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }\n            }, \n            \"ticketDocumentInfo\": {\n                \"primaryDocumentNumber\": \"ASDF1234\"\n            }, \n            \"coupons\": {\n                \"value\": {\n                    \"amount\": 1000, \n                    \"currency\": \"USD\", \n                    \"precision\": 4\n                }, \n                \"ticketingDateOfIssue\": \"2021-05-29\", \n                \"soldFlightNumber\": \"1234\", \n                \"soldOriginCityCode\": \"JFK\", \n                \"soldReservationStatusCode\": \"HK\", \n                \"soldAirlineDesignator\": \"UA\", \n                \"soldDestinationCityCode\": \"LHR\", \n                \"soldFlightDepartureDateTime\": \"2022-02-11T02:00:00Z\", \n                \"couponNumber\": 4, \n                \"classOfService\": \"First\"\n            }, \n            \"passenger\": {\n                \"customerIdentification\": \"007\", \n                \"firstName\": \"James\", \n                \"lastName\": \"Bond\", \n                \"dateOfBirth\": \"1988-03-10\", \n                \"frequentFlyers\": {\n                    \"airlineCarrierCode\": \"UA\", \n                    \"referenceNumber\": \"1234ASDF\"\n                }\n            }\n        }\n    }\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017ee3a5-7345-a79a-5304-de1fd10dda00"
+      },
+      "response": []
+    },
+    {
+      "name": "[2]: Test - Add Car Air Booking",
+      "_postman_id": "47e6d81b-670d-4451-8885-caf1f5665e35",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "5|1usrDuSVxOvpGuVnJsLF3EHhXtFSGe0bMu9p0jVC"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"carSegments\": [\n        {\n            \"confirmationID\": \"123DB\",\n            \"dropoffAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"United States\",\n                \"postalCode\": null,\n                \"state\": null,\n                \"street\": null\n            },\n            \"dropoffDateTimeTZ\": \"2022-04-22T17:18:34+00:00\",\n            \"pickupAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"United States\",\n                \"postalCode\": null,\n                \"state\": null,\n                \"street\": null\n            },\n            \"pickupDateTimeTZ\": \"2022-01-22T17:18:34+00:00\",\n            \"statusCode\": \"HK\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017d0592-8fea-3a68-9b31-58827a2f34b2"
+      },
+      "response": []
+    },
+    {
+      "name": "[2]: Test - Add Ground",
+      "_postman_id": "198796a4-5c8c-43ad-abf6-bbdca00c16e4",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "5|1usrDuSVxOvpGuVnJsLF3EHhXtFSGe0bMu9p0jVC"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"carSegments\": [\n        {\n            \"confirmationID\": \"123DB\",\n            \"dropoffAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"United States\",\n                \"postalCode\": null,\n                \"state\": null,\n                \"street\": null\n            },\n            \"dropoffDateTimeTZ\": \"2022-04-22T17:18:34+00:00\",\n            \"pickupAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"United States\",\n                \"postalCode\": null,\n                \"state\": null,\n                \"street\": null\n            },\n            \"pickupDateTimeTZ\": \"2022-01-22T17:18:34+00:00\",\n            \"statusCode\": \"HK\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017d0592-8fea-3a68-9b31-58827a2f34b2"
+      },
+      "response": []
+    },
+    {
+      "name": "[2]: Test - Add Train Booking",
+      "_postman_id": "760b9cf6-a287-4bfa-81c1-7c0612c905c8",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "5|1usrDuSVxOvpGuVnJsLF3EHhXtFSGe0bMu9p0jVC"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n     \"airSegments\": [{\n\t\t\"aircraftTypeCode\": \"32C\", \n\t\t\"airlineReference\": \"O1FM53\", \n\t\t\"bookingClass\": \"F\", \n\t\t\"carrier\": \"UA\", \n\t\t\"departureDateTimeTZ\": \"2022-01-22T17:18:34-05:00\",\n\t\t\"destination\": \"LHR\", \n\t\t\"flightNumber\": 1234, \n\t\t\"itemID\": 1234567890, \n\t\t\"operatingCarrier\": \"UA\", \n\t\t\"operatingFlightNumber\": 1234, \n\t\t\"origin\": \"JFK\", \n\t\t\"segmentStatus\": \"HK\", \n\t\t\"arrivalDateTimeTZ\": \"2022-01-22T17:18:34+00:00\", \n\t\t\"arrivalGate\": \"5\", \n\t\t\"departureGate\": \"2\"\n\t}],\n    \"carSegments\": [\n        {\n            \"confirmationID\": \"123DB\",\n            \"dropoffAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"United States\",\n                \"postalCode\": null,\n                \"state\": null,\n                \"street\": null\n            },\n            \"dropoffDateTimeTZ\": \"2022-04-22T17:18:34+00:00\",\n            \"pickupAddress\": {\n                \"city\": \"New York\",\n                \"country\": \"United States\",\n                \"postalCode\": null,\n                \"state\": null,\n                \"street\": null\n            },\n            \"pickupDateTimeTZ\": \"2022-01-22T17:18:34+00:00\",\n            \"statusCode\": \"HK\"\n        }\n    ],\n    \"travellers\": {\n\t\t\"firstName\": \"James\", \n\t\t\"lastName\": \"Bond\", \n\t\t\"itemID\": 1, \n\t\t\"passengerType\": \"government\", \n\t\t\"title\": \"Mr\"\n\t},\n\t\"tripID\": \"ASDF1234\", \n\t\"sourceInfo\": {\n\t\t\"agencyID\": \"KAYAK1\", \n\t\t\"bookingOffice\": \"KAYAK\", \n\t\t\"creationDate\": \"05-28-2021\", \n\t\t\"sourceSystem\": \"KAYAK\", \n\t\t\"sourceReference\": \"1234ASDF\", \n\t\t\"arranger\": {\n\t\t\t\"arrangerEmail\": \"m@mi6.gov.uk\", \n\t\t\t\"arrangerEmployeeId\": \"1\", \n\t\t\t\"arrangerName\": \"M\"\n\t\t}\n\t}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://staging.blockskye.com/api/v1/test/expense_approval/017d0592-8fea-3a68-9b31-58827a2f34b2"
+      },
+      "response": []
+    },
+    {
+      "name": "[4]: Test - Cancel Car Booking",
+      "_postman_id": "f4d7e0d1-e972-44fd-aaeb-825c854496f7",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "5|1usrDuSVxOvpGuVnJsLF3EHhXtFSGe0bMu9p0jVC"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"carSegments\": [\n        {\n            \"confirmationID\": \"123DB\",\n            \"statusCode\": \"XX\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://staging.blockskye.com/api/v1/test/expense_approval/017c2d74-3b07-96c8-9105-eda29f88e911"
+      },
+      "response": []
+    },
+    {
+      "name": "[5]: Test - Cancel Air Ticket",
+      "_postman_id": "b9652835-701b-481a-833d-acb38a2d2ac2",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "5|1usrDuSVxOvpGuVnJsLF3EHhXtFSGe0bMu9p0jVC"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"carSegments\": [\n        {\n            \"statusCode\": \"XX\"\n        }\n    ],\n\t\"ticket\": {\n            \"Sale\": {\n\t\t\t    \"dateOfIssue\": \"2021-05-11\", \n\t\t\t    \"documentNumber\": \"1234567890\", \n\t\t\t    \"prices\": {\n\t\t\t    \t\"ticketDocumentAmount\": {\n\t\t\t        \"amount\": 1000, \n\t\t\t\t    \"currency\": \"USD\", \n\t\t\t\t    \"precision\": 4\n\t\t\t\t}\n\t\t\t}, \n\t\t\t\"ticketDocumentInfo\": {\n\t\t\t\t\"primaryDocumentNumber\": \"ASDF1234\"\n\t\t\t}, \n\t\t\t\"coupons\": {\n\t\t\t\t\"value\": {\n\t\t\t\t\t\"amount\": 1000, \n\t\t\t\t\t\"currency\": \"USD\", \n\t\t\t\t\t\"precision\": 4\n\t\t\t\t}, \n\t\t\t\t\"ticketingDateOfIssue\": \"2021-05-29\", \n\t\t\t\t\"soldFlightNumber\": \"1234\", \n\t\t\t\t\"soldOriginCityCode\": \"JFK\", \n\t\t\t\t\"soldReservationStatusCode\": \"HK\", \n\t\t\t\t\"soldAirlineDesignator\": \"UA\", \n\t\t\t\t\"soldDestinationCityCode\": \"LHR\", \n\t\t\t\t\"soldFlightDepartureDateTime\": \"2021-05-30T02:00:00Z\", \n\t\t\t\t\"couponNumber\": 4, \n\t\t\t\t\"classOfService\": \"First\"\n\t\t\t}, \n\t\t\t\"passenger\": {\n\t\t\t\t\"customerIdentification\": \"007\", \n\t\t\t\t\"firstName\": \"James\", \n\t\t\t\t\"lastName\": \"Bond\", \n\t\t\t\t\"dateOfBirth\": \"2021-05-11\", \n\t\t\t\t\"frequentFlyers\": {\n\t\t\t\t\t\"airlineCarrierCode\": \"UA\", \n\t\t\t\t\t\"referenceNumber\": \"1234ASDF\"\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://staging.blockskye.com/api/v1/test/expense_approval/017c2d74-3b07-96c8-9105-eda29f88e911"
+      },
+      "response": []
+    },
+    {
+      "name": "[5]: Test - Cancel All Booking",
+      "_postman_id": "0699cfb9-0408-40d5-aa38-fc1adbd57c6b",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "5|1usrDuSVxOvpGuVnJsLF3EHhXtFSGe0bMu9p0jVC"
+          }
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"airSegments\": [\n        {\n            \"airlineReference\": \"PAS12\",\n            \"segmentStatus\": \"XX\"\n        }\n    ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://staging.blockskye.com/api/v1/test/expense_approval/017f1ba2-d034-05d9-b2db-f9a7966dc5be"
+      },
+      "response": []
+    },
+    {
+      "name": "Create Luhn Number",
+      "_postman_id": "104da414-10f6-4346-81ca-6eb9f4bb4a26",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://staging.blockskye.com/generateNumber/123456"
+      },
+      "response": []
+    },
+    {
+      "name": "Validate Luhn Number",
+      "_postman_id": "8fa9f4e2-247e-4a04-b699-8e07d2df18cc",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://staging.blockskye.com/validateNumber/1234561547998374"
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "_postman_id": "1f2b1b0b-ad77-4219-bc2b-f88d45abc98e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": null
+      },
+      "response": []
+    }
+  ]
+}
