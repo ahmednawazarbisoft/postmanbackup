@@ -14,7 +14,7 @@ jobs:
           command: sudo npm install -g newman
       - run:
           name: Run postman api tests with newman
-          command: newman run https://api.getpostman.com/collections/19811963-2c2e74c1-704a-4dd4-9ef2-eec19afd8308?apikey=PMAK-625fe7a527dbba4e448e74de-49abea12159cc3a230dfb63cef19601eec
+          command: newman run "https://api.getpostman.com/collections/19811963-2c2e74c1-704a-4dd4-9ef2-eec19afd8308?apikey="$NEWMAN_API
 workflows:
   version: 2
   postman-api-test-workflow:
