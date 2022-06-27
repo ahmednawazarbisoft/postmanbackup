@@ -1,3 +1,3 @@
 <?php
 
-echo 'test postman circle ci';
+echo 'test postman circle ci new';
