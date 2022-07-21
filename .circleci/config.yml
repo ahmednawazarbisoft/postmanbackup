@@ -6,7 +6,7 @@ version: 2
 jobs:
   postman-api-test:
     docker:
-      - image: circleci/node:12
+      - image: circleci/php:7.4-node
     steps:
       - checkout
       - run:
